@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /*bg colours*/
+  --backgound: linear-gradient(to right, #200122, #6f0000);
+  --primary: darkred;
+  --secondary: darkgoldenrod;
+  --bg-card: linear-gradient(to top, #000000, #434343);
+  --alt-bg: linear-gradient(to bottom, #cac531, #f3f9a7);
+  /*text colours*/
+  --text-white: white;
+  --text-black: black;
+}
+
+body {
+  font-family: "Pacifico";
+  width: 100%;
+}
+
+/*Header section*/
+
+#header {
+  background: linear-gradient(to right, #200122, #6f0000);
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+}
+.logo {
+  height: 80px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar {
+  display: flex;
+  gap: 35px;
+}
+
+.navbar i {
+  font-size: 36px;
+  display: none;
+  color: var(--text-white);
+}
+
+#toggle-menu {
+  display: none;
+}
+
+.navbar-link {
+  text-decoration: none;
+  font-weight: 300;
+  color: var(--text-white);
+}
+.cart-icon {
+  height: 35px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin-right: 1rem;
+  border: 2px solid white;
+  cursor: pointer;
+}
+/*Main Section*/
+main {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  margin-top: 80px;
+}
+/*Hero section*/
+#hero {
+  background-image: url(./img/Fondo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  margin-top: 80px;
+  padding: 40px 0;
+  gap: 20px;
+}
+.hero-text h1 {
+  font-size: 30px;
+  text-decoration: underline;
+  color: var(--primary);
+}
+.hero-text span {
+  font-size: 23px;
+  text-decoration: underline;
+  color: var(--primary);
+}
+.hero-card img {
+  width: 280px;
+}
+/*info section*/
+#info {
+  background: linear-gradient(to bottom, #cac531, #f3f9a7);
+  text-align: center;
+  padding: 50px 0;
+  border-top: solid 2px;
+  border-bottom: solid 2px;
+  border-color: var(--primary);
+}
+.info-text h2 {
+  font-size: 28px;
+  text-decoration: underline;
+  color: var(--primary);
+}
+/*Products Section*/
+#products {
+  background-image: url(./img/hora-del-te.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  padding: 30px;
+  width: 100%;
+}
+#products img {
+  width: 200px;
+}
+.tipos-de-te {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.tipos-de-te h2 {
+  text-align: center;
+  font-size: 40px;
+  color: var(--text-black);
+  -webkit-text-stroke: 0.1px darkgoldenrod; /* Ancho del borde de 2 píxeles y color negro */
+  text-decoration: underline;
+}
+.saborizados,
+.herboristeria,
+.especiales {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contenido {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Crea 3 columnas iguales */
+  grid-row-gap: 15px; /* Espacio vertical entre los divs */
+  grid-column-gap: 1px; /* Espacio horizontal entre los divs */
+  text-align: center;
+}
+.individual {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  border-radius: 25px;
+  border: 2px dashed darkgoldenrod;
+  cursor: pointer;
+  padding: 5px;
+  margin-bottom: 5px;
+  background-image: url("./img/logo/Blur.png"); /* Imagen de fondo */
+  background-size: cover; /* Ajuste de la imagen de fondo */
+  backdrop-filter: blur(5px); /* Difuminado del fondo */
+  -webkit-backdrop-filter: blur(5px);
+  /* Prefijo de proveedor para mayor compatibilidad */
+}
+.contenido p {
+  text-align: center;
+  height: 14px;
+  margin-bottom: 13px;
+  font-size: 21px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  color: var(--text-black);
+  text-shadow: 1px 1px 2px darkgoldenrod;
+  line-height: 1.3;
+}
+/*Mediaquerie Tablet*/
+@media (max-width: 992px) {
+  .navbar ul {
+    background: linear-gradient(to right, #200122, #6f0000);
+    width: 50%;
+    height: calc(70vh - 80px);
+    position: absolute;
+    top: 80px;
+    right: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*display: none;*/
+    transform: translateX(200%);
+    transition: all 0.4s ease;
+  }
+  .navbar i {
+    display: block;
+  }
+  #toggle-menu:checked ~ .navbar-list {
+    /*display: flex;*/
+    transform: translateX(0);
+  }
+  .contenido {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+/* Mediaquerie mobile*/
+@media (max-width: 576px) {
+  .navbar ul {
+    background: linear-gradient(to right, #200122, #6f0000);
+    width: 50%;
+    height: calc(70vh - 80px);
+    position: absolute;
+    top: 80px;
+    right: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*display: none;*/
+    transform: translateX(200%);
+    transition: all 0.4s ease;
+  }
+  .navbar i {
+    display: block;
+  }
+  #toggle-menu:checked ~ .navbar-list {
+    /*display: flex;*/
+    transform: translateX(0);
+  }
+}
