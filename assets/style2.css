@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /*bg colours*/
+  --backgound: linear-gradient(to right, #200122, #6f0000);
+  --primary: darkred;
+  --secondary: darkgoldenrod;
+  --bg-card: linear-gradient(to top, #000000, #434343);
+  --alt-bg: linear-gradient(to bottom, #cac531, #f3f9a7);
+  /*text colours*/
+  --text-white: white;
+  --text-black: black;
+}
+
+body {
+  font-family: "Pacifico";
+  width: 100%;
+  background-image: url(./img/te-inicio.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
