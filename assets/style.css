@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style-type: none;
 }
 
 :root {
@@ -91,6 +92,7 @@ main {
   margin-top: 80px;
   padding: 40px 0;
   gap: 20px;
+  scroll-margin-top: 80px;
 }
 .hero-text h1 {
   font-size: 30px;
@@ -113,6 +115,7 @@ main {
   border-top: solid 2px;
   border-bottom: solid 2px;
   border-color: var(--primary);
+  scroll-margin-top: 90px;
 }
 .info-text h2 {
   font-size: 28px;
@@ -127,6 +130,7 @@ main {
   display: flex;
   padding: 30px;
   width: 100%;
+  scroll-margin-top: 82px;
 }
 #products img {
   width: 200px;
@@ -139,7 +143,7 @@ main {
 .tipos-de-te h2 {
   text-align: center;
   font-size: 40px;
-  color: var(--text-black);
+  color: var(--primary);
   -webkit-text-stroke: 0.1px darkgoldenrod; /* Ancho del borde de 2 píxeles y color negro */
   text-decoration: underline;
 }
@@ -183,10 +187,36 @@ main {
   font-size: 21px;
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
-  color: var(--text-black);
+  color: var(--primary);
   text-shadow: 1px 1px 2px darkgoldenrod;
   line-height: 1.3;
 }
+/*Footer Section*/
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  border-top: solid 2px;
+  border-bottom: solid 2px;
+  border-color: var(--primary);
+  background: linear-gradient(to bottom, #cac531, #f3f9a7);
+}
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+.footer-container h2 {
+  font-size: 29px;
+  text-decoration: underline;
+  color: var(--primary);
+}
+.footer img {
+  width: 100px;
+  cursor: pointer;
+}
+
 /*Mediaquerie Tablet*/
 @media (max-width: 992px) {
   .navbar ul {
@@ -214,7 +244,34 @@ main {
     display: flex;
     flex-wrap: wrap;
   }
+  .individual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .text-overlay {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white;
+    text-align: center;
+  }
+
+  .text-overlay p {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--text-black);
+  }
+  #footer {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
+
 /* Mediaquerie mobile*/
 @media (max-width: 576px) {
   .navbar ul {
@@ -237,5 +294,31 @@ main {
   #toggle-menu:checked ~ .navbar-list {
     /*display: flex;*/
     transform: translateX(0);
+  }
+  .individual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .text-overlay {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: white;
+    text-align: center;
+  }
+
+  .text-overlay p {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--text-black);
+  }
+  #footer {
+    flex-direction: column;
+    gap: 20px;
   }
 }
